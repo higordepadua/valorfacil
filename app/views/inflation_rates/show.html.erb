@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @inflation_rate.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @inflation_rate.year %>
+</p>
+
+<p>
+  <strong>Percent:</strong>
+  <%= @inflation_rate.percent %>
+</p>
+
+<%= link_to 'Edit', edit_inflation_rate_path(@inflation_rate) %> |
+<%= link_to 'Back', inflation_rates_path %>

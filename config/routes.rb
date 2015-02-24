@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
+  get 'goals/show'
+
+  get 'goals/new'
+
+  get 'goals/edit'
+
+  get 'goals/create'
+
+  get 'goals/update'
+
+  get 'goals/destroy'
+
+  get 'goals/index'
+
   resources :inflation_rates
+
+  resources :goals, :only => [:index, :show, :new, :edit, :create, :update, :destroy]
+
+  root :to => redirect('/goals/index');
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,8 +1,8 @@
 class CreateGoals < ActiveRecord::Migration
   def change
     create_table :goals do |t|
-      t.string :description
-      t.date :startDate
+      t.string :description, :null => false
+      t.date :startDate, :null => false
       t.date :endDate
       t.integer :frequency
       t.boolean :isRepeatable

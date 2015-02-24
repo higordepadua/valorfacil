@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+goals = Goal.create("Imovel", Date.new("20-02-2015"), Date.new("20-02-2019"), 1, false, 10000.00, 4)

@@ -1,13 +1,12 @@
-<%= simple_form_for(@inflation_rate) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @inflation_rate, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :month %>
+  <%= error_span(@inflation_rate[:month]) %>
+  <%= f.input :year %>
+  <%= error_span(@inflation_rate[:year]) %>
+  <%= f.input :percent %>
+  <%= error_span(@inflation_rate[:percent]) %>
 
-  <div class="form-inputs">
-    <%= f.input :month %>
-    <%= f.input :year %>
-    <%= f.input :percent %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                inflation_rates_path, :class => 'btn btn-default' %>
 <% end %>

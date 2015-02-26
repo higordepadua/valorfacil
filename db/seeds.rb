@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-goals = Goal.create("Imovel", Date.new("20-02-2015"), Date.new("20-02-2019"), 1, false, 10000.00, 4)
+goals = Goal.create( :description=>"Imovel", :startDate => Date.new(2015, 02, 20), :endDate => Date.new(2019, 02, 20), :frequency => 1, :isRepeatable => false, :expectedAmount => 10000.00, :importanceRate => 4)

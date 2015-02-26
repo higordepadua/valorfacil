@@ -1,0 +1,20 @@
+<%= simple_form_for @goal, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :description %>
+  <%= error_span(@goal[:description]) %>
+  <%= f.input :startDate %>
+  <%= error_span(@goal[:startDate]) %>
+  <%= f.input :endDate %>
+  <%= error_span(@goal[:endDate]) %>
+  <%= f.input :frequency %>
+  <%= error_span(@goal[:frequency]) %>
+  <%= f.input :isRepeatable %>
+  <%= error_span(@goal[:isRepeatable]) %>
+  <%= f.input :expectedAmount %>
+  <%= error_span(@goal[:expectedAmount]) %>
+  <%= f.input :importanceRate %>
+  <%= error_span(@goal[:importanceRate]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                goals_path, :class => 'btn btn-default' %>
+<% end %>

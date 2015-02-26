@@ -1,2 +1,31 @@
-<h1>Goals#show</h1>
-<p>Find me in app/views/goals/show.html.erb</p>
+<%- model_class = Goal -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @goal.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:startDate) %>:</strong></dt>
+  <dd><%= @goal.startDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:endDate) %>:</strong></dt>
+  <dd><%= @goal.endDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:frequency) %>:</strong></dt>
+  <dd><%= @goal.frequency %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:isRepeatable) %>:</strong></dt>
+  <dd><%= @goal.isRepeatable %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:expectedAmount) %>:</strong></dt>
+  <dd><%= @goal.expectedAmount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:importanceRate) %>:</strong></dt>
+  <dd><%= @goal.importanceRate %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              goals_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_goal_path(@goal), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              goal_path(@goal),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
